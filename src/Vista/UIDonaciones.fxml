@@ -1,8 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+   <children>
+      <AnchorPane layoutX="-54.0" layoutY="-107.0" prefHeight="593.0" prefWidth="764.0">
+         <children>
+            <TextField fx:id="Código" layoutX="281.0" layoutY="177.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="Volumen" layoutX="281.0" layoutY="247.0" prefHeight="20.0" prefWidth="86.0" />
+            <Text layoutX="239.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código" />
+            <Text layoutX="243.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha" />
+            <Text layoutX="230.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Volumen" />
+            <TextField fx:id="N_Donante3" layoutX="168.0" layoutY="24.0" prefHeight="20.0" prefWidth="86.0" />
+            <ImageView fitHeight="40.0" fitWidth="46.0" layoutX="64.0" layoutY="116.0">
+               <image>
+                  <Image url="@../../../../Desktop/DAW/fx/App%20Donaciones/Logo%20Simplificado.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#cc0000" layoutX="109.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones">
+               <font>
+                  <Font name="Times New Roman Bold" size="24.0" />
+               </font>
+            </Text>
+            <Button fx:id="Formulario" layoutX="83.0" layoutY="165.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="133.0" text="Formulario de donación">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Text layoutX="396.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo" />
+            <Text layoutX="379.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Última donación" wrappingWidth="57.1171875" />
+            <ChoiceBox fx:id="Tipo" layoutX="436.0" layoutY="177.0" prefWidth="86.0" />
+            <Button fx:id="Insertar" layoutX="188.0" layoutY="306.0" mnemonicParsing="false" text="Insertar donación" />
+            <Button fx:id="Actualizar" layoutX="327.0" layoutY="306.0" mnemonicParsing="false" text="Actualizar donación" />
+            <Button fx:id="Eliminar" layoutX="470.0" layoutY="306.0" mnemonicParsing="false" text="Eliminar donación" textFill="RED" />
+            <TableView fx:id="Tabla_Donaciones" layoutX="64.0" layoutY="356.0" prefHeight="217.0" prefWidth="691.0">
+              <columns>
+                <TableColumn fx:id="T_Codigo" prefWidth="127.0" text="Código" />
+                <TableColumn fx:id="T_Fecha" minWidth="4.0" prefWidth="167.0" text="Fecha" />
+                  <TableColumn fx:id="T_Volumen" minWidth="0.0" prefWidth="133.0" text="Volumen" />
+                  <TableColumn fx:id="T_Tipo" prefWidth="98.0" text="Tipo" />
+                  <TableColumn fx:id="T_Ult_Don" prefWidth="165.0" text="Última Donación" />
+              </columns>
+            </TableView>
+            <Button fx:id="Atras" layoutX="718.0" layoutY="574.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="Atrás">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <TextField fx:id="Buscar" layoutX="607.0" layoutY="259.0" />
+            <Text layoutX="480.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Búsqueda por código" />
+            <DatePicker fx:id="Fecha" layoutX="281.0" layoutY="213.0" prefHeight="25.0" prefWidth="86.0" />
+            <DatePicker fx:id="Ult_Don" layoutX="436.0" layoutY="213.0" prefHeight="25.0" prefWidth="86.0" />
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>
-

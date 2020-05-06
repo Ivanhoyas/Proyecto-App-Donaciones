@@ -1,8 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+   <children>
+      <AnchorPane layoutX="-179.0" layoutY="-177.0" prefHeight="567.0" prefWidth="829.0">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="46.0" layoutX="193.0" layoutY="183.0">
+               <image>
+                  <Image url="@../../../../Desktop/DAW/fx/App%20Donaciones/Logo%20Simplificado.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#cc0000" layoutX="239.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informes">
+               <font>
+                  <Font name="Times New Roman Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#cc0000" layoutX="362.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones por sexo">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#cc0000" layoutX="205.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones por municipio">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#cc0000" layoutX="693.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones AB-">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#cc0000" layoutX="547.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones AB+">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#cc0000" layoutX="379.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones 0-">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#cc0000" layoutX="235.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones 0+">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#cc0000" layoutX="698.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones B-">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#cc0000" layoutX="546.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones B+">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#cc0000" layoutX="377.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones A-">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#cc0000" layoutX="234.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones A+">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#cc0000" layoutX="672.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones por donante">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#cc0000" layoutX="529.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donaciones por fecha">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Text>
+            <Button fx:id="B1" layoutX="231.0" layoutY="284.0" mnemonicParsing="false" text="Generar PDF" />
+            <Button fx:id="B5" layoutX="231.0" layoutY="389.0" mnemonicParsing="false" text="Generar PDF" />
+            <Button fx:id="B4" layoutX="693.0" layoutY="284.0" mnemonicParsing="false" text="Generar PDF" />
+            <Button fx:id="B3" layoutX="543.0" layoutY="284.0" mnemonicParsing="false" text="Generar PDF" />
+            <Button fx:id="B2" layoutX="373.0" layoutY="284.0" mnemonicParsing="false" text="Generar PDF" />
+            <Button fx:id="B8" layoutX="693.0" layoutY="389.0" mnemonicParsing="false" text="Generar PDF" />
+            <Button fx:id="B7" layoutX="548.0" layoutY="389.0" mnemonicParsing="false" text="Generar PDF" />
+            <Button fx:id="B6" layoutX="373.0" layoutY="389.0" mnemonicParsing="false" text="Generar PDF" />
+            <Button fx:id="B12" layoutX="693.0" layoutY="483.0" mnemonicParsing="false" text="Generar PDF" />
+            <Button fx:id="B11" layoutX="543.0" layoutY="483.0" mnemonicParsing="false" text="Generar PDF" />
+            <Button fx:id="B10" layoutX="373.0" layoutY="483.0" mnemonicParsing="false" text="Generar PDF" />
+            <Button fx:id="B9" layoutX="231.0" layoutY="483.0" mnemonicParsing="false" text="Generar PDF" />
+            <Button fx:id="Atras" layoutX="763.0" layoutY="528.0" mnemonicParsing="false" text="Atrás" />
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>
-
