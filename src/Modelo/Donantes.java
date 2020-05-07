@@ -14,7 +14,7 @@ public class Donantes {
 	private int Tlf;
 	private int TLFMovil;
 	private String Email;
-	private char Sexo;
+	private String Sexo;
 	private String TipoSang;
 	private String Direccion;
 	private String Residencia;
@@ -24,7 +24,7 @@ public class Donantes {
 	private String Pais;
 	private Blob Foto;
 	public Donantes(String numDonante, String nombre, String apellido1, String apellido2, String dNI_NIE, Date fechaNac,
-			int tlf, int tLFMovil, String email, char sexo, String tipoSang, String direccion, String residencia,
+			int tlf, int tLFMovil, String email, String sexo, String tipoSang, String direccion, String residencia,
 			String provincia, String pobacion, int cP, String pais, Blob foto) {
 		super();
 		NumDonante = numDonante;
@@ -100,10 +100,10 @@ public class Donantes {
 	public void setEmail(String email) {
 		Email = email;
 	}
-	public char getSexo() {
+	public String getSexo() {
 		return Sexo;
 	}
-	public void setSexo(char sexo) {
+	public void setSexo(String sexo) {
 		Sexo = sexo;
 	}
 	public String getTipoSang() {
