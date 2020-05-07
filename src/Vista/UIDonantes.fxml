@@ -9,11 +9,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutY="45.0" prefHeight="550.0" prefWidth="720.0">
          <children>
@@ -49,27 +49,6 @@
             <TextField fx:id="Tipo_Residencia" layoutX="356.0" layoutY="121.0" prefHeight="20.0" prefWidth="86.0" />
             <TextField fx:id="Dirección" layoutX="356.0" layoutY="86.0" prefHeight="20.0" prefWidth="86.0" />
             <Button fx:id="ADJ_ARCH" layoutX="586.0" layoutY="124.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="ADJ ARCH" />
-            <TableView fx:id="Tabla_Donantes" layoutX="37.0" layoutY="337.0" prefHeight="200.0" prefWidth="652.0">
-              <columns>
-                <TableColumn fx:id="T_N_Donante" prefWidth="75.0" text="N_Donante" />
-                <TableColumn fx:id="T_Nombre" prefWidth="75.0" text="Nombre" />
-                  <TableColumn fx:id="T_Apellido_1" prefWidth="75.0" text="Apellido 1" />
-                  <TableColumn fx:id="T_Apellido_2" prefWidth="75.0" text="Apellido 2" />
-                  <TableColumn fx:id="T_DNI_NIE" prefWidth="75.0" text="DNI/NIE" />
-                  <TableColumn fx:id="T_Fecha_Nac" prefWidth="75.0" text="Fecha_nac" />
-                  <TableColumn fx:id="T_TLF" prefWidth="75.0" text="TLF" />
-                  <TableColumn fx:id="T_TLF_Mov" prefWidth="75.0" text="TLF_Mov" />
-                  <TableColumn fx:id="T_Email" prefWidth="75.0" text="Email" />
-                  <TableColumn fx:id="T_Sexo" prefWidth="75.0" text="Sexo" />
-                  <TableColumn fx:id="T_Tipo_Sang" prefWidth="75.0" text="Tipo_Sang" />
-                  <TableColumn fx:id="T_Direccion" prefWidth="75.0" text="Dirección" />
-                  <TableColumn fx:id="T_Tipo_Residencia" prefWidth="75.0" text="Tipo_Res" />
-                  <TableColumn fx:id="T_Poblacion" prefWidth="75.0" text="Población" />
-                  <TableColumn fx:id="T_Provincia" prefWidth="75.0" text="Provincia" />
-                  <TableColumn fx:id="T_CP" prefWidth="75.0" text="CP" />
-                  <TableColumn fx:id="T_CP1" prefWidth="75.0" text="País Natal" />
-              </columns>
-            </TableView>
             <Button fx:id="Atras" layoutX="687.0" layoutY="524.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="Atrás">
                <font>
                   <Font size="10.0" />
@@ -86,6 +65,31 @@
             <Button fx:id="Eliminar" layoutX="586.0" layoutY="301.0" mnemonicParsing="false" text="Eliminar donante" textFill="RED" />
             <TextField layoutX="565.0" layoutY="251.0" />
             <Text layoutX="478.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Busqueda por DNI/NIE" wrappingWidth="106.00000000000011" />
+            <StackPane layoutX="29.0" layoutY="339.0" prefHeight="200.0" prefWidth="652.0">
+               <children>
+                  <TableView fx:id="Tabla_Donantes" prefHeight="200.0" prefWidth="652.0">
+                    <columns>
+                      <TableColumn fx:id="T_N_Donante" prefWidth="75.0" text="N_Donante" />
+                      <TableColumn fx:id="T_Nombre" prefWidth="75.0" text="Nombre" />
+                        <TableColumn fx:id="T_Apellido_1" prefWidth="75.0" text="Apellido 1" />
+                        <TableColumn fx:id="T_Apellido_2" prefWidth="75.0" text="Apellido 2" />
+                        <TableColumn fx:id="T_DNI_NIE" prefWidth="75.0" text="DNI/NIE" />
+                        <TableColumn fx:id="T_Fecha_Nac" prefWidth="75.0" text="Fecha_nac" />
+                        <TableColumn fx:id="T_TLF" prefWidth="75.0" text="TLF" />
+                        <TableColumn fx:id="T_TLF_Mov" prefWidth="75.0" text="TLF_Mov" />
+                        <TableColumn fx:id="T_Email" prefWidth="75.0" text="Email" />
+                        <TableColumn fx:id="T_Sexo" prefWidth="75.0" text="Sexo" />
+                        <TableColumn fx:id="T_Tipo_Sang" prefWidth="75.0" text="Tipo_Sang" />
+                        <TableColumn fx:id="T_Direccion" prefWidth="75.0" text="Dirección" />
+                        <TableColumn fx:id="T_Tipo_Residencia" prefWidth="75.0" text="Tipo_Res" />
+                        <TableColumn fx:id="T_Poblacion" prefWidth="75.0" text="Población" />
+                        <TableColumn fx:id="T_Provincia" prefWidth="75.0" text="Provincia" />
+                        <TableColumn fx:id="T_CP" prefWidth="75.0" text="CP" />
+                        <TableColumn fx:id="T_CP1" prefWidth="75.0" text="País Natal" />
+                    </columns>
+                  </TableView>
+               </children>
+            </StackPane>
          </children>
       </AnchorPane>
       <ImageView fitHeight="40.0" fitWidth="46.0" layoutX="12.0" layoutY="12.0">
