@@ -62,9 +62,9 @@ public class ConexionBBDD2 {
 	}
 
 
-	public int InsertarDonante(String numDonante, String nombre, String apellido1, String apellido2, String dNI_NIE, Date fechaNac,
-			int tlf, int tLFMovil, String email, String sexo, String tipoSang, String direccion, String residencia,
-			String provincia, String poblacion, int cP, String pais,String aptitud, Blob foto) throws SQLException{
+	public int InsertarDonante(String numDonante, String nombre, String apellido1, String apellido2, String dNI_NIE, String fnaci,
+			String tLF, String movil, String email, String sexo, String tipoSang, String direccion, String residencia,
+			String provincia, String poblacion, String cP, String pais,String aptitud, String foto) throws SQLException{
 
 
 
@@ -77,9 +77,9 @@ public class ConexionBBDD2 {
 		pstmt.setString(3, apellido1);
 		pstmt.setString(4, apellido2);
 		pstmt.setString(5, dNI_NIE);
-		pstmt.setDate(6, fechaNac);
-		pstmt.setInt(7, tlf);
-		pstmt.setInt(8, tLFMovil);
+		pstmt.setString(6, fnaci);
+		pstmt.setString(7, tLF);
+		pstmt.setString(8, movil);
 		pstmt.setString(9, email);
 		pstmt.setString(10, sexo);
 		pstmt.setString(11, tipoSang);
@@ -87,7 +87,7 @@ public class ConexionBBDD2 {
 		pstmt.setString(13, residencia );
 		pstmt.setString(14, poblacion );
 		pstmt.setString(15, provincia);
-		pstmt.setInt(16, cP);
+		pstmt.setString(16, cP);
 		pstmt.setString(17, pais );
 		pstmt.setString(18, aptitud );
 		//ejecuto la sentencia

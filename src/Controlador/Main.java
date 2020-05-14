@@ -50,7 +50,7 @@ public class Main extends Application {
    }
     public void mostrarVentanaSecundaria() {
         try {
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../vista/UIDonantes.fxml"));
+        	 FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Vista/UIDonantes.fxml"));
             AnchorPane ventanaDos = (AnchorPane) loader.load();
             /* Creamos la segunda ventana como otro stage */
             Stage ventana = new Stage();
@@ -67,6 +67,7 @@ public class Main extends Application {
             ventana.show();
 
         } catch (Exception e) {
+        	System.out.println(e);
             //tratar la excepción
         }
     }

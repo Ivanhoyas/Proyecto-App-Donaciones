@@ -1,11 +1,17 @@
 package Vista;
 
+import java.sql.Blob;
+import java.sql.SQLException;
+
 import Controlador.Main;
+import Modelo.ConexionBBDD2;
 import Modelo.Donantes;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -67,7 +73,7 @@ public class ControladoraDonantes {
 	@FXML    
 	private Button btnActualizarDonante;         
 	@FXML     
-	private Button btnEliminarDonanante;                 
+	private Button btnEliminarDonante;                 
         
 	@FXML    
 	private TextField txtBuscar;               
@@ -81,8 +87,7 @@ public class ControladoraDonantes {
 	private TableColumn<Donantes,String> Apellido_1;     
 	@FXML    
 	private TableColumn<Donantes,String> Apellido_2;     
-	@FXML    
-	private TableColumn<Donantes,String> Foto;         
+       
 	@FXML   
 	private TableColumn<Donantes,String> DNI_Pasaporte;         
 	@FXML     
@@ -111,6 +116,7 @@ public class ControladoraDonantes {
 	private TableColumn<Donantes,String> Pais_nacimiento;
 	@FXML
 	private TableColumn<Donantes,String> Aptitud;
+	
 
 
 	private Stage ventana;
@@ -127,9 +133,64 @@ public class ControladoraDonantes {
 	public void closeWindow(){
 		this.ventana.close();
 	}
+ ConexionBBDD2 con ;
 
+public void insert () throws SQLException {
+		
+		con = new ConexionBBDD2();
+		
+		
+		String Ndonante = txtNdonante.getText();
+		String Nombre = txtNonmbre.getText();
+		String Apellido1 = txtApellido1.getText();
+		String Apellido2 = txtApellido2.getText();
+		String foto = "NULL";
+		String DNI = txtDNI.getText();
+		String Fnaci = txtFecha_nacimiento.getText();
+		String TLF = txtTlf.getText();
+		String movil = txtTlfMovil.getText();
+		String Email = txtEmail.getText();
+		String Tsangre = txtTipoSangre.getText();
+		String Direccion = txtDireccion.getText();
+		String Tresidencia = txtTipoResidencia.getText();
+		String Poblacion = txtPoblacion.getText();
+		String Provincia =  txtProvincia.getText();
+		String CP = txtCP.getText();
+		String PaisNatal = txtPaisNatal.getText();
+		String sexo;
+		String Aptitud = "N";
+		
+		
+		
+		
+		
+		if(hombre.isSelected()) {
+			sexo = "H";
+		}else {
+			sexo = "M";}
+		
+		
+		
+	
 
-
+	
+		if(txtNdonante.getText().equals("") || txtNonmbre.getText().equals("") || txtApellido1.getText().equals("") || txtApellido2.getText().equals("") || txtDNI.getText().equals("") ||txtFecha_nacimiento.getText().equals("") ||
+		txtTlf.getText().equals("") || txtTlfMovil.getText().equals("") || txtEmail.getText().equals("") || txtTipoSangre.getText().equals("") || txtDireccion.getText().equals("") || txtTipoResidencia.getText().equals("") ||
+		txtProvincia.getText().equals("") || txtCP.getText().equals("") || txtPaisNatal.getText().equals("")){
+			
+			
+			
+			
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("HAY CAMPOS VACIOS");
+			alert.setHeaderText("Introduce todos los datos");
+			alert.setContentText("Llena todos los huecos");
+			alert.showAndWait();
+		}
+		else{
+			con.InsertarDonante(Ndonante, Nombre, Apellido1, Apellido2, DNI, Fnaci, TLF, movil, Email, sexo, Tsangre, Direccion, Tresidencia, Poblacion, Provincia, CP, PaisNatal, Aptitud, foto);	
+		}
+	}	
 
 
 }

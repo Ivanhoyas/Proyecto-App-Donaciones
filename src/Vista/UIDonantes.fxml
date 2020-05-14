@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -55,16 +54,14 @@
             </Button>
             <RadioButton fx:id="hombre" layoutX="353.0" layoutY="12.0" mnemonicParsing="false" text="Hombre" />
             <RadioButton fx:id="mujer" layoutX="426.0" layoutY="12.0" mnemonicParsing="false" text="Mujer" />
-            <ChoiceBox fx:id="TIpo_Sang" layoutX="356.0" layoutY="52.0" prefHeight="20.0" prefWidth="86.0" />
-            <ChoiceBox fx:id="Provincia" layoutX="356.0" layoutY="189.0" prefHeight="20.0" prefWidth="86.0" />
             <Button fx:id="Generar" layoutX="1053.0" layoutY="176.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="117.0" text="GENERAR CARNET" />
             <ImageView fx:id="Foto" fitHeight="139.0" fitWidth="117.0" layoutX="1053.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="btnNuevoDonante" layoutX="284.0" layoutY="301.0" mnemonicParsing="false" text="Insertar donante" />
             <Button fx:id="btnActualizarDonante" layoutX="433.0" layoutY="301.0" mnemonicParsing="false" text="Actualizar donante" />
-            <Button fx:id="btnEliminarDonacion" layoutX="586.0" layoutY="301.0" mnemonicParsing="false" text="Eliminar donante" textFill="RED" />
+            <Button fx:id="btnEliminarDonante" layoutX="586.0" layoutY="301.0" mnemonicParsing="false" text="Eliminar donante" textFill="RED" />
             <TextField fx:id="txtBuscar" layoutX="491.0" layoutY="97.0" />
             <Text layoutX="496.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Busqueda por DNI/NIE" wrappingWidth="106.00000000000011" />
-            <TableView fx:id="Tabla_Donantes" layoutX="19.0" layoutY="336.0" prefHeight="200.0" prefWidth="1276.0">
+            <TableView fx:id="TablaDonantes" layoutX="19.0" layoutY="336.0" prefHeight="200.0" prefWidth="1276.0">
               <columns>
                 <TableColumn fx:id="Ndonante" prefWidth="75.0" text="N_Donante" />
                 <TableColumn fx:id="Nombre" prefWidth="75.0" text="Nombre" />
@@ -85,6 +82,8 @@
                   <TableColumn fx:id="Pais_nacimiento" prefWidth="75.0" text="País Natal" />
               </columns>
             </TableView>
+            <TextField fx:id="txtProvincia" layoutX="356.0" layoutY="191.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtTipoSangre" layoutX="356.0" layoutY="49.0" prefHeight="20.0" prefWidth="86.0" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="40.0" fitWidth="46.0" layoutX="12.0" layoutY="12.0">
