@@ -10,7 +10,7 @@ public class Donantes {
 	private String Apellido1;
 	private String Apellido2;
 	private String DNI_NIE;
-	private Date FechaNac;
+	private String FechaNac;
 	private int Tlf;
 	private int TLFMovil;
 	private String Email;
@@ -24,7 +24,7 @@ public class Donantes {
 	private String Pais;
 	private String Aptitud;
 	private Blob Foto;
-	public Donantes(String numDonante, String nombre, String apellido1, String apellido2, String dNI_NIE, Date fechaNac,
+	public Donantes(String numDonante, String nombre, String apellido1, String apellido2, String dNI_NIE, String fechaNac,
 			int tlf, int tLFMovil, String email, String sexo, String tipoSang, String direccion, String residencia,
 			String provincia, String poblacion, int cP, String pais, Blob foto) {
 		super();
@@ -77,10 +77,10 @@ public class Donantes {
 	public void setDNI_NIE(String dNI_NIE) {
 		DNI_NIE = dNI_NIE;
 	}
-	public Date getFechaNac() {
+	public String getFechaNac() {
 		return FechaNac;
 	}
-	public void setFechaNac(Date fechaNac) {
+	public void setFechaNac(String fechaNac) {
 		FechaNac = fechaNac;
 	}
 	public int getTlf() {

@@ -55,7 +55,7 @@
             <RadioButton fx:id="hombre" layoutX="353.0" layoutY="12.0" mnemonicParsing="false" text="Hombre" />
             <RadioButton fx:id="mujer" layoutX="426.0" layoutY="12.0" mnemonicParsing="false" text="Mujer" />
             <Button fx:id="Generar" layoutX="1053.0" layoutY="176.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="117.0" text="GENERAR CARNET" />
-            <ImageView fx:id="Foto" fitHeight="139.0" fitWidth="117.0" layoutX="1053.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true" />
+            
             <Button fx:id="btnNuevoDonante" layoutX="284.0" layoutY="301.0" mnemonicParsing="false" text="Insertar donante" />
             <Button fx:id="btnActualizarDonante" layoutX="433.0" layoutY="301.0" mnemonicParsing="false" text="Actualizar donante" />
             <Button fx:id="btnEliminarDonante" layoutX="586.0" layoutY="301.0" mnemonicParsing="false" text="Eliminar donante" textFill="RED" />

@@ -121,5 +121,37 @@ public class ConexionBBDD2 {
 		}
 
 	}
+	
+	public ObservableList<Donantes>  ConsultaDonantes() throws SQLException{
+
+
+        ObservableList<Donantes> ListaDonantes =  FXCollections.observableArrayList();
+
+        //Preparo la conexión para ejecutar sentencias SQL de tipo update
+        Statement stm = conexion.createStatement();
+
+        // Preparo la sentencia SQL CrearTablaPersonas
+        String selectsql = "SELECT * FROM "+usr+".DONANTES";
+        PreparedStatement pstmt = conexion.prepareStatement(selectsql);
+        //ejecuto la sentencia
+        try{
+            ResultSet resultado = pstmt.executeQuery();
+
+            while(resultado.next()){
+                Donantes person = new Donantes(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5),
+                        resultado.getString(6), resultado.getInt(7), resultado.getInt(8), resultado.getString(9), resultado.getString(10), resultado.getString(11), resultado.getString(12), resultado.getString(13),
+                        resultado.getString(14), resultado.getString(15), resultado.getInt(16), resultado.getString(17), resultado.getBlob(19));
+                ListaDonantes.add(person);
+            }
+
+        }catch(SQLException sqle){
+
+
+
+            System.out.println(sqle.getMessage());
+        }
+
+        return ListaDonantes;
+    }
 	}
 

@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import Controlador.Main;
 import Modelo.ConexionBBDD2;
 import Modelo.Donantes;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -16,6 +18,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class ControladoraDonantes {
@@ -116,6 +119,7 @@ public class ControladoraDonantes {
 	private TableColumn<Donantes,String> Pais_nacimiento;
 	@FXML
 	private TableColumn<Donantes,String> Aptitud;
+
 	
 
 
@@ -133,7 +137,35 @@ public class ControladoraDonantes {
 	public void closeWindow(){
 		this.ventana.close();
 	}
+	
+	private ObservableList<Donantes> datosseleccion = FXCollections.observableArrayList();
  ConexionBBDD2 con ;
+ public void initialize() throws SQLException{               
+	 con = new ConexionBBDD2();         
+	 datosseleccion = con.ConsultaDonantes();    
+	 TablaDonantes.setItems(datosseleccion);   
+	 Ndonante.setCellValueFactory(new PropertyValueFactory<Donantes,String>("NumDonante")); 
+	 Nombre.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Nombre")); 
+	 Apellido_1.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Apellido1")); 
+	 Apellido_2.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Apellido2"));
+	 DNI_Pasaporte.setCellValueFactory(new PropertyValueFactory<Donantes,String>("DNI_NIE")); 
+	 Fecha_naci.setCellValueFactory(new PropertyValueFactory<Donantes,String>("FechaNac"));
+	 TLF.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Tlf"));
+	 TLF_mov.setCellValueFactory(new PropertyValueFactory<Donantes,String>("TLFMovil"));
+	 Email.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Email"));
+	 Sexo.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Sexo"));
+	 Tipo_sanguineo.setCellValueFactory(new PropertyValueFactory<Donantes,String>("TipoSang"));
+	 Direccion.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Direccion")); 
+	 T_residencia.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Residencia"));
+	 Provincia.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Provincia"));
+	 Poblacion.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Poblacion"));
+	 CP.setCellValueFactory(new PropertyValueFactory<Donantes,String>("CP"));  
+	 Pais_nacimiento.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Pais"));
+	 
+
+	 }
+
+
 
 public void insert () throws SQLException {
 		
