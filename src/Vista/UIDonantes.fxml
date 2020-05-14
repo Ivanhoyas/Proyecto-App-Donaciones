@@ -9,15 +9,14 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.ControladoraDonantes">
    <children>
-      <AnchorPane layoutY="45.0" prefHeight="550.0" prefWidth="720.0">
+      <AnchorPane layoutY="45.0" prefHeight="550.0" prefWidth="1311.0">
          <children>
-            <TextField fx:id="N_Donante" layoutX="158.0" layoutY="14.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtNdonante" layoutX="158.0" layoutY="14.0" prefHeight="20.0" prefWidth="86.0" />
             <Text layoutX="90.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número donante" wrappingWidth="45.99609375" />
             <Text layoutX="90.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Móvil" wrappingWidth="45.99609375" />
             <Text layoutX="85.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono" wrappingWidth="53.99609375" />
@@ -26,14 +25,14 @@
             <Text layoutX="86.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido 2" wrappingWidth="53.99609375" />
             <Text layoutX="86.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido 1" wrappingWidth="53.99609375" />
             <Text layoutX="90.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" wrappingWidth="45.99609375" />
-            <TextField fx:id="TLF_Movil" layoutX="158.0" layoutY="259.0" prefHeight="20.0" prefWidth="86.0" />
-            <TextField fx:id="TLF" layoutX="158.0" layoutY="224.0" prefHeight="20.0" prefWidth="86.0" />
-            <TextField fx:id="Fecha_Nac" layoutX="158.0" layoutY="189.0" prefHeight="20.0" prefWidth="86.0" />
-            <TextField fx:id="DNI_NIE" layoutX="158.0" layoutY="154.0" prefHeight="20.0" prefWidth="86.0" />
-            <TextField fx:id="Apellido_2" layoutX="158.0" layoutY="119.0" prefHeight="20.0" prefWidth="86.0" />
-            <TextField fx:id="Apellido_1" layoutX="158.0" layoutY="84.0" prefHeight="20.0" prefWidth="86.0" />
-            <TextField fx:id="Nombre" layoutX="158.0" layoutY="49.0" prefHeight="20.0" prefWidth="86.0" />
-            <TextField fx:id="Email" layoutX="158.0" layoutY="293.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtTlfMovil" layoutX="158.0" layoutY="259.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtTlf" layoutX="158.0" layoutY="224.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtFecha_nacimiento" layoutX="158.0" layoutY="189.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtDNI" layoutX="158.0" layoutY="154.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtApellido2" layoutX="158.0" layoutY="119.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtApellido1" layoutX="158.0" layoutY="84.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtNonmbre" layoutX="158.0" layoutY="49.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtEmail" layoutX="158.0" layoutY="293.0" prefHeight="20.0" prefWidth="86.0" />
             <Text layoutX="90.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="45.99609375" />
             <Text layoutX="288.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sexo" wrappingWidth="45.99609375" />
             <Text layoutX="283.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="País natal" wrappingWidth="53.99609375" />
@@ -43,53 +42,49 @@
             <Text layoutX="267.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo residencia" wrappingWidth="86.0" />
             <Text layoutX="284.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dirección" wrappingWidth="53.99609375" />
             <Text layoutX="278.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo Sanguíneo" wrappingWidth="64.99609375" />
-            <TextField fx:id="País" layoutX="356.0" layoutY="261.0" prefHeight="20.0" prefWidth="86.0" />
-            <TextField fx:id="CP" layoutX="356.0" layoutY="226.0" prefHeight="20.0" prefWidth="86.0" />
-            <TextField fx:id="Población" layoutX="356.0" layoutY="156.0" prefHeight="20.0" prefWidth="86.0" />
-            <TextField fx:id="Tipo_Residencia" layoutX="356.0" layoutY="121.0" prefHeight="20.0" prefWidth="86.0" />
-            <TextField fx:id="Dirección" layoutX="356.0" layoutY="86.0" prefHeight="20.0" prefWidth="86.0" />
-            <Button fx:id="ADJ_ARCH" layoutX="586.0" layoutY="124.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="ADJ ARCH" />
-            <Button fx:id="Atras" layoutX="687.0" layoutY="524.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="Atrás">
+            <TextField fx:id="txtPaisNatal" layoutX="356.0" layoutY="261.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtCP" layoutX="356.0" layoutY="226.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtPoblacion" layoutX="356.0" layoutY="156.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtTipoResidencia" layoutX="356.0" layoutY="121.0" prefHeight="20.0" prefWidth="86.0" />
+            <TextField fx:id="txtDireccion" layoutX="356.0" layoutY="86.0" prefHeight="20.0" prefWidth="86.0" />
+            <Button fx:id="btnFoto" layoutX="1067.0" layoutY="131.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="ADJ ARCH" />
+            <Button fx:id="Atras" layoutX="1278.0" layoutY="533.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="38.0" text="Atrás">
                <font>
                   <Font size="10.0" />
                </font>
             </Button>
-            <RadioButton fx:id="RHombre" layoutX="353.0" layoutY="12.0" mnemonicParsing="false" text="Hombre" />
-            <RadioButton fx:id="RMujer" layoutX="426.0" layoutY="12.0" mnemonicParsing="false" text="Mujer" />
+            <RadioButton fx:id="hombre" layoutX="353.0" layoutY="12.0" mnemonicParsing="false" text="Hombre" />
+            <RadioButton fx:id="mujer" layoutX="426.0" layoutY="12.0" mnemonicParsing="false" text="Mujer" />
             <ChoiceBox fx:id="TIpo_Sang" layoutX="356.0" layoutY="52.0" prefHeight="20.0" prefWidth="86.0" />
             <ChoiceBox fx:id="Provincia" layoutX="356.0" layoutY="189.0" prefHeight="20.0" prefWidth="86.0" />
-            <Button fx:id="Generar" layoutX="569.0" layoutY="170.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="117.0" text="GENERAR CARNET" />
-            <ImageView fx:id="Foto" fitHeight="139.0" fitWidth="117.0" layoutX="569.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="Insertar" layoutX="284.0" layoutY="301.0" mnemonicParsing="false" text="Insertar donante" />
-            <Button fx:id="Actualizar" layoutX="433.0" layoutY="301.0" mnemonicParsing="false" text="Actualizar donante" />
-            <Button fx:id="Eliminar" layoutX="586.0" layoutY="301.0" mnemonicParsing="false" text="Eliminar donante" textFill="RED" />
-            <TextField layoutX="565.0" layoutY="251.0" />
-            <Text layoutX="478.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Busqueda por DNI/NIE" wrappingWidth="106.00000000000011" />
-            <StackPane layoutX="29.0" layoutY="339.0" prefHeight="200.0" prefWidth="652.0">
-               <children>
-                  <TableView fx:id="Tabla_Donantes" prefHeight="200.0" prefWidth="652.0">
-                    <columns>
-                      <TableColumn fx:id="T_N_Donante" prefWidth="75.0" text="N_Donante" />
-                      <TableColumn fx:id="T_Nombre" prefWidth="75.0" text="Nombre" />
-                        <TableColumn fx:id="T_Apellido_1" prefWidth="75.0" text="Apellido 1" />
-                        <TableColumn fx:id="T_Apellido_2" prefWidth="75.0" text="Apellido 2" />
-                        <TableColumn fx:id="T_DNI_NIE" prefWidth="75.0" text="DNI/NIE" />
-                        <TableColumn fx:id="T_Fecha_Nac" prefWidth="75.0" text="Fecha_nac" />
-                        <TableColumn fx:id="T_TLF" prefWidth="75.0" text="TLF" />
-                        <TableColumn fx:id="T_TLF_Mov" prefWidth="75.0" text="TLF_Mov" />
-                        <TableColumn fx:id="T_Email" prefWidth="75.0" text="Email" />
-                        <TableColumn fx:id="T_Sexo" prefWidth="75.0" text="Sexo" />
-                        <TableColumn fx:id="T_Tipo_Sang" prefWidth="75.0" text="Tipo_Sang" />
-                        <TableColumn fx:id="T_Direccion" prefWidth="75.0" text="Dirección" />
-                        <TableColumn fx:id="T_Tipo_Residencia" prefWidth="75.0" text="Tipo_Res" />
-                        <TableColumn fx:id="T_Poblacion" prefWidth="75.0" text="Población" />
-                        <TableColumn fx:id="T_Provincia" prefWidth="75.0" text="Provincia" />
-                        <TableColumn fx:id="T_CP" prefWidth="75.0" text="CP" />
-                        <TableColumn fx:id="T_CP1" prefWidth="75.0" text="País Natal" />
-                    </columns>
-                  </TableView>
-               </children>
-            </StackPane>
+            <Button fx:id="Generar" layoutX="1053.0" layoutY="176.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="117.0" text="GENERAR CARNET" />
+            <ImageView fx:id="Foto" fitHeight="139.0" fitWidth="117.0" layoutX="1053.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="btnNuevoDonante" layoutX="284.0" layoutY="301.0" mnemonicParsing="false" text="Insertar donante" />
+            <Button fx:id="btnActualizarDonante" layoutX="433.0" layoutY="301.0" mnemonicParsing="false" text="Actualizar donante" />
+            <Button fx:id="btnEliminarDonacion" layoutX="586.0" layoutY="301.0" mnemonicParsing="false" text="Eliminar donante" textFill="RED" />
+            <TextField fx:id="txtBuscar" layoutX="491.0" layoutY="97.0" />
+            <Text layoutX="496.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Busqueda por DNI/NIE" wrappingWidth="106.00000000000011" />
+            <TableView fx:id="Tabla_Donantes" layoutX="19.0" layoutY="336.0" prefHeight="200.0" prefWidth="1276.0">
+              <columns>
+                <TableColumn fx:id="Ndonante" prefWidth="75.0" text="N_Donante" />
+                <TableColumn fx:id="Nombre" prefWidth="75.0" text="Nombre" />
+                  <TableColumn fx:id="Apellido_1" prefWidth="75.0" text="Apellido 1" />
+                  <TableColumn fx:id="Apellido_2" prefWidth="75.0" text="Apellido 2" />
+                  <TableColumn fx:id="DNI_Pasaporte" prefWidth="75.0" text="DNI/NIE" />
+                  <TableColumn fx:id="Fecha_naci" prefWidth="75.0" text="Fecha_nac" />
+                  <TableColumn fx:id="TLF" prefWidth="75.0" text="TLF" />
+                  <TableColumn fx:id="TLF_mov" prefWidth="75.0" text="TLF_Mov" />
+                  <TableColumn fx:id="Email" prefWidth="75.0" text="Email" />
+                  <TableColumn fx:id="Sexo" prefWidth="75.0" text="Sexo" />
+                  <TableColumn fx:id="Tipo_sanguineo" prefWidth="75.0" text="Tipo_Sang" />
+                  <TableColumn fx:id="Direccion" prefWidth="75.0" text="Dirección" />
+                  <TableColumn fx:id="T_residencia" prefWidth="75.0" text="Tipo_Res" />
+                  <TableColumn fx:id="Poblacion" prefWidth="75.0" text="Población" />
+                  <TableColumn fx:id="Provincia" prefWidth="75.0" text="Provincia" />
+                  <TableColumn fx:id="CP" prefWidth="75.0" text="CP" />
+                  <TableColumn fx:id="Pais_nacimiento" prefWidth="75.0" text="País Natal" />
+              </columns>
+            </TableView>
          </children>
       </AnchorPane>
       <ImageView fitHeight="40.0" fitWidth="46.0" layoutX="12.0" layoutY="12.0">

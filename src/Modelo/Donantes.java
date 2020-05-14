@@ -19,13 +19,14 @@ public class Donantes {
 	private String Direccion;
 	private String Residencia;
 	private String Provincia;
-	private String Pobacion;
+	private String Poblacion;
 	private int CP;
 	private String Pais;
+	private String Aptitud;
 	private Blob Foto;
 	public Donantes(String numDonante, String nombre, String apellido1, String apellido2, String dNI_NIE, Date fechaNac,
 			int tlf, int tLFMovil, String email, String sexo, String tipoSang, String direccion, String residencia,
-			String provincia, String pobacion, int cP, String pais, Blob foto) {
+			String provincia, String poblacion, int cP, String pais, Blob foto) {
 		super();
 		NumDonante = numDonante;
 		Nombre = nombre;
@@ -41,7 +42,7 @@ public class Donantes {
 		Direccion = direccion;
 		Residencia = residencia;
 		Provincia = provincia;
-		Pobacion = pobacion;
+		Poblacion = poblacion;
 		CP = cP;
 		Pais = pais;
 		Foto = foto;
@@ -131,10 +132,10 @@ public class Donantes {
 		Provincia = provincia;
 	}
 	public String getPobacion() {
-		return Pobacion;
+		return Poblacion;
 	}
 	public void setPobacion(String pobacion) {
-		Pobacion = pobacion;
+		Poblacion = pobacion;
 	}
 	public int getCP() {
 		return CP;
@@ -147,6 +148,12 @@ public class Donantes {
 	}
 	public void setPais(String pais) {
 		Pais = pais;
+	}
+	public String getAptitud() {
+		return Aptitud;
+	}
+	public void setAptitud(String aptitud) {
+		Aptitud=aptitud;
 	}
 	public Blob getFoto() {
 		return Foto;

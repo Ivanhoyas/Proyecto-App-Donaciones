@@ -64,12 +64,12 @@ public class ConexionBBDD2 {
 
 	public int InsertarDonante(String numDonante, String nombre, String apellido1, String apellido2, String dNI_NIE, Date fechaNac,
 			int tlf, int tLFMovil, String email, String sexo, String tipoSang, String direccion, String residencia,
-			String provincia, String pobacion, int cP, String pais, Blob foto) throws SQLException{
+			String provincia, String poblacion, int cP, String pais,String aptitud, Blob foto) throws SQLException{
 
 
 
 		// Preparo la sentencia SQL
-		String insertsql = "INSERT INTO " + usr +".DONANTES VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String insertsql = "INSERT INTO " + usr +".DONANTES VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NULL)";
 
 		PreparedStatement pstmt = conexion.prepareStatement (insertsql);
 		pstmt.setString(1, numDonante);
@@ -85,9 +85,11 @@ public class ConexionBBDD2 {
 		pstmt.setString(11, tipoSang);
 		pstmt.setString(12, direccion);
 		pstmt.setString(13, residencia );
-		pstmt.setString(14, provincia);
-		pstmt.setInt(15, cP);
-		pstmt.setBlob(16, foto);
+		pstmt.setString(14, poblacion );
+		pstmt.setString(15, provincia);
+		pstmt.setInt(16, cP);
+		pstmt.setString(17, pais );
+		pstmt.setString(18, aptitud );
 		//ejecuto la sentencia
 		try{
 			int resultado = pstmt.executeUpdate();
