@@ -8,6 +8,8 @@ import java.util.Properties;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class ConexionBBDD2 {
 
@@ -62,64 +64,67 @@ public class ConexionBBDD2 {
 	}
 
 
-	public int InsertarDonante(String numDonante, String nombre, String apellido1, String apellido2, String dNI_NIE, String fnaci,
-			String tLF, String movil, String email, String sexo, String tipoSang, String direccion, String residencia,
-			String provincia, String poblacion, String cP, String pais,String aptitud, String foto) throws SQLException{
+	public void InsertarDonante(String ndonante, String nombre, String apellido_1, String apellido_2,
+			String dNI_Pasaporte, String fecha_naci, String tLF, String movil, String email, String sexo,
+			String tipo_sanguineo, String direccion, String t_residencia, String poblacion, String provinvia,
+			String cP, String pais_naci, String aptitud, String foto) throws SQLException{
 
+		//Preparo la conexion para ejecutar sentencias SQL de tipo update
+		Statement stm = conexion.createStatement();
 
-
-		// Preparo la sentencia SQL
-		String insertsql = "INSERT INTO " + usr +".DONANTES VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NULL)";
-
-		PreparedStatement pstmt = conexion.prepareStatement (insertsql);
-		pstmt.setString(1, numDonante);
+		// Preparo la sentencia SQL CrearTablaPersonas
+		String insertsql = "INSERT INTO "+usr+".DONANTES VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NULL)";
+		
+		PreparedStatement pstmt = conexion.prepareStatement(insertsql);
+		pstmt.setString(1, ndonante);
 		pstmt.setString(2, nombre);
-		pstmt.setString(3, apellido1);
-		pstmt.setString(4, apellido2);
-		pstmt.setString(5, dNI_NIE);
-		pstmt.setString(6, fnaci);
+		pstmt.setString(3, apellido_1);
+		pstmt.setString(4, apellido_2);
+		pstmt.setString(5, dNI_Pasaporte);
+		pstmt.setString(6, fecha_naci);
 		pstmt.setString(7, tLF);
 		pstmt.setString(8, movil);
 		pstmt.setString(9, email);
 		pstmt.setString(10, sexo);
-		pstmt.setString(11, tipoSang);
+		pstmt.setString(11, tipo_sanguineo);
 		pstmt.setString(12, direccion);
-		pstmt.setString(13, residencia );
-		pstmt.setString(14, poblacion );
-		pstmt.setString(15, provincia);
+		pstmt.setString(13, t_residencia);
+		pstmt.setString(14, poblacion);
+		pstmt.setString(15, provinvia);
 		pstmt.setString(16, cP);
-		pstmt.setString(17, pais );
-		pstmt.setString(18, aptitud );
+		pstmt.setString(17, pais_naci);
+		pstmt.setString(18, aptitud);
+		
 		//ejecuto la sentencia
 		try{
-			int resultado = pstmt.executeUpdate();
-
-			if(resultado != 1)
-				System.out.println("Error en la inserción " + resultado);
-			else
-				System.out.println("Persona insertada con éxito!!!");
-
-			return 0;
-		}catch(SQLException sqle){
-
-			int pos = sqle.getMessage().indexOf(":");
-			String codeErrorSQL = sqle.getMessage().substring(0,pos);
-
-			if(codeErrorSQL.equals("ORA-00001") ){
-				System.out.println("Ya existe una persona con  ese Número de donante!!");
-				return 1;
-			}
-			if(codeErrorSQL.equals("ORA-00001") ){
-				System.out.println("Ya existe una persona con  ese DNIE/NIE!!");
-				return 1;
-			}
-			else{
-				System.out.println("Ha habido algún problema con  Oracle al hacer la insercion");
-				return 2;
-			}
+			pstmt.executeUpdate();
+		
+		Alert alert = new Alert(AlertType.CONFIRMATION);
+		alert.setTitle("DONANTE INTRODUCIDO");
+		alert.setHeaderText("Un donante ha sido introducido con exito");
+		alert.setContentText("El donante ha sido guardado con exito en la Base de Datos");
+		alert.showAndWait();
 
 		}
-
+		catch(SQLException sqle) {
+			
+			int pos = sqle.getMessage().indexOf(":");
+			String sqlerror = sqle.getMessage().substring(0,pos);
+			
+			if (sqlerror.equals("ORA-00001")) {
+				System.out.println("Ya existe ese numero de donante en la BBDD");
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Error!!!");
+				alert.setHeaderText("Este numero de donante ya existe en la base de datos");
+				alert.setContentText("¡No se puede guardar un numero de donante que ya existe!");
+				alert.showAndWait();
+				
+			}else {
+				System.out.println(sqle.getMessage());
+				System.out.println("Un error ha ocurrido");
+				
+			}
+		}
 	}
 	
 	public ObservableList<Donantes>  ConsultaDonantes() throws SQLException{

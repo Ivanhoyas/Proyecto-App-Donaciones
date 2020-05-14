@@ -1,6 +1,6 @@
 package Vista;
 
-import java.sql.Blob;
+
 import java.sql.SQLException;
 
 import Controlador.Main;
@@ -12,7 +12,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -176,7 +176,6 @@ public void insert () throws SQLException {
 		String Nombre = txtNonmbre.getText();
 		String Apellido1 = txtApellido1.getText();
 		String Apellido2 = txtApellido2.getText();
-		String foto = "NULL";
 		String DNI = txtDNI.getText();
 		String Fnaci = txtFecha_nacimiento.getText();
 		String TLF = txtTlf.getText();
@@ -191,6 +190,7 @@ public void insert () throws SQLException {
 		String PaisNatal = txtPaisNatal.getText();
 		String sexo;
 		String Aptitud = "N";
+		String foto = "NULL";
 		
 		
 		
