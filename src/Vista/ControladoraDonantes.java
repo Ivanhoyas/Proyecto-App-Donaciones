@@ -224,5 +224,61 @@ public void insert () throws SQLException {
 		}
 	}	
 
+public void update () throws SQLException {
+	
+	con = new ConexionBBDD2();
+	
+	
+	String Ndonante = txtNdonante.getText();
+	String Nombre = txtNonmbre.getText();
+	String Apellido1 = txtApellido1.getText();
+	String Apellido2 = txtApellido2.getText();
+	String DNI = txtDNI.getText();
+	String Fnaci = txtFecha_nacimiento.getText();
+	String TLF = txtTlf.getText();
+	String movil = txtTlfMovil.getText();
+	String Email = txtEmail.getText();
+	String Tsangre = txtTipoSangre.getText();
+	String Direccion = txtDireccion.getText();
+	String Tresidencia = txtTipoResidencia.getText();
+	String Poblacion = txtPoblacion.getText();
+	String Provincia =  txtProvincia.getText();
+	String CP = txtCP.getText();
+	String PaisNatal = txtPaisNatal.getText();
+	String sexo;
+	String Aptitud = "N";
+	String foto = "NULL";
+	
+	
+	
+	
+	
+	if(hombre.isSelected()) {
+		sexo = "H";
+	}else {
+		sexo = "M";}
+	
+	
+	
 
+
+
+	if(txtNdonante.getText().equals("") || txtNonmbre.getText().equals("") || txtApellido1.getText().equals("") || txtApellido2.getText().equals("") || txtDNI.getText().equals("") ||txtFecha_nacimiento.getText().equals("") ||
+	txtTlf.getText().equals("") || txtTlfMovil.getText().equals("") || txtEmail.getText().equals("") || txtTipoSangre.getText().equals("") || txtDireccion.getText().equals("") || txtTipoResidencia.getText().equals("") ||
+	txtProvincia.getText().equals("") || txtCP.getText().equals("") || txtPaisNatal.getText().equals("")){
+		
+		
+		
+		
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("HAY CAMPOS VACIOS");
+		alert.setHeaderText("Introduce todos los datos");
+		alert.setContentText("Llena todos los huecos");
+		alert.showAndWait();
+	}
+	else{
+		con.UpdateDonante(Ndonante, Nombre, Apellido1, Apellido2, DNI, Fnaci, TLF, movil, Email, sexo, Tsangre, Direccion, Tresidencia, Poblacion, Provincia, CP, PaisNatal, Aptitud, foto);	
+	}
+}	
 }
+
