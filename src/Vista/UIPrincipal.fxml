@@ -7,8 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.ControladoraPrincipal">
    <children>
       <AnchorPane layoutX="-263.0" layoutY="-150.0" prefHeight="566.0" prefWidth="685.0">
          <children>
@@ -22,7 +21,7 @@
                   <Font name="Times New Roman Bold" size="32.0" />
                </font>
             </Text>
-            <Button fx:id="Donantes" layoutX="417.0" layoutY="301.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="120.0" text="Donantes" textFill="#cc0000">
+            <Button fx:id="Donantes" layoutX="417.0" layoutY="301.0" mnemonicParsing="false" onAction="#nuevaVentana" prefHeight="62.0" prefWidth="120.0" text="Donantes" textFill="#cc0000">
                <font>
                   <Font name="Times New Roman" size="18.0" />
                </font>
