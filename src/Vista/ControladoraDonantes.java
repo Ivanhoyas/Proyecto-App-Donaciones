@@ -1,14 +1,17 @@
 package Vista;
 
 
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Optional;
+
+import com.itextpdf.text.DocumentException;
 
 import Controlador.Main;
 
 import Modelo.ConexionBBDD2;
 import Modelo.Donantes;
-
+import Modelo.ImprimeArchivo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -332,6 +335,21 @@ public void Buscar() throws SQLException{
 
 }
 
+public void imprime() throws FileNotFoundException, DocumentException{
+
+
+    int index = TablaDonantes.getSelectionModel().getSelectedIndex();
+    if( index >= 0){
+
+        Donantes seleccionada = TablaDonantes.getSelectionModel().getSelectedItem();
+
+
+        ImprimeArchivo carne = new ImprimeArchivo(" Carné de "+ seleccionada.getNombre(),"C:\\Users\\juanjose\\Desktop\\" );
+        carne.generarArchivoPDF(seleccionada.getNombre(), seleccionada.getNumDonante(), seleccionada.getApellido1(), seleccionada.getApellido2(), seleccionada.getTipoSang());
+
+
+    }
+}
 			
 }
 
