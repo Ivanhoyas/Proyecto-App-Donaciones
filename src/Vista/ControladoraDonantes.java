@@ -2,17 +2,20 @@ package Vista;
 
 
 import java.sql.SQLException;
+import java.util.Optional;
 
 import Controlador.Main;
+
 import Modelo.ConexionBBDD2;
 import Modelo.Donantes;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -40,6 +43,8 @@ public class ControladoraDonantes {
 	private TextField txtApellido2; 
 	@FXML 
 	private Button btnFoto;   
+	@FXML
+	private Button btnBusqueda;
 	@FXML    
 	private TextField txtDNI;  
 	@FXML  
@@ -280,5 +285,53 @@ public void update () throws SQLException {
 		con.UpdateDonante(Ndonante, Nombre, Apellido1, Apellido2, DNI, Fnaci, TLF, movil, Email, sexo, Tsangre, Direccion, Tresidencia, Poblacion, Provincia, CP, PaisNatal, Aptitud, foto);	
 	}
 }	
+
+public void Eliminar() throws SQLException{
+	int index = TablaDonantes.getSelectionModel().getSelectedIndex();
+    if( index >= 0){
+
+        Donantes seleccionada = TablaDonantes.getSelectionModel().getSelectedItem();
+
+        // Se abre un dialog box de confirmacion de eliminar
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("CONFIRMACION");
+        alert.setHeaderText("Por favor confirme el borrado");
+        alert.setContentText("¿Desea borrar el Donante con código: "+ seleccionada.getNumDonante() +" ?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            // ... user chose OK
+            datosseleccion.remove(seleccionada);
+            TablaDonantes.setItems(this.datosseleccion);
+
+            con.EliminarDonante(seleccionada.getNumDonante());
+
+        }
+
+    }else{
+
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Error en selección de datos");
+        alert.setContentText("NO HAY NINGUN ELEMENTO SELECCIONADO!");
+        alert.showAndWait();
+
+    }
+
+}
+public void Buscar() throws SQLException{
+
+	String buscar = txtBuscar.getText();
+
+	// llama a un  método  que haga el select de la base de datos
+	ConexionBBDD2 con = new ConexionBBDD2();
+	datosseleccion = con.BuscarDonante(buscar);
+
+	TablaDonantes.setItems(datosseleccion);
+
+
+}
+
+			
 }
 

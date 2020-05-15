@@ -206,7 +206,7 @@ public class ConexionBBDD2 {
             ResultSet resultado = pstmt.executeQuery();
 
             while(resultado.next()){
-                Donantes person = new Donantes(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5),
+                Donantes person = new Donantes(resultado.getInt(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5),
                         resultado.getString(6), resultado.getInt(7), resultado.getInt(8), resultado.getString(9), resultado.getString(10), resultado.getString(11), resultado.getString(12), resultado.getString(13),
                         resultado.getString(14), resultado.getString(15), resultado.getInt(16), resultado.getString(17), resultado.getBlob(19));
                 ListaDonantes.add(person);
@@ -221,5 +221,93 @@ public class ConexionBBDD2 {
 
         return ListaDonantes;
     }
+	public void EliminarDonante(int ndonante) throws SQLException{    
+	
+		Statement stm = conexion.createStatement();
+  
+		String insertsql = "DELETE FROM "+usr+".DONANTES WHERE Ndonante=?"; 
+		PreparedStatement pstmt = conexion.prepareStatement(insertsql);    
+		pstmt.setInt(1, ndonante);    
+    
+		try{      
+			pstmt.executeUpdate();                   
+		Alert alert = new Alert(AlertType.CONFIRMATION);      
+		alert.setTitle("DELETE EXITOSO");   
+		alert.setHeaderText("HAS ELIMINADO A UN DONANTE");       
+		alert.setContentText("El donante ha sido eliminado de la base de datos");
+		alert.showAndWait();    
+		}    
+		catch(SQLException sqle) {       
+			int pos = sqle.getMessage().indexOf(":");
+			String sqlerror = sqle.getMessage().substring(0,pos);
+			if (sqlerror.equals("ORA-00001")) { 
+				System.out.println(sqle.getMessage());       
+				}else {       
+					System.out.println(sqle.getMessage());    
+					System.out.println("Un error ha ocurrido");
+					}
+			}
+		
+	}
+	public ObservableList<Donantes> BuscarDonante(String DniNie) throws SQLException{
+
+		ObservableList<Donantes> listaDonantes =  FXCollections.observableArrayList();     
+		//Preparo la conexión para ejecutar sentencias SQL de tipo update
+		Statement stm = conexion.createStatement(); 
+		// Preparo la sentencia SQL CrearTablaPersonas 
+		String selectsql = "SELECT * FROM "+usr+".DONANTES WHERE DNI_NIE=?";    
+		PreparedStatement pstmt = conexion.prepareStatement(selectsql);     
+		pstmt.setString(1, DniNie);
+
+
+
+
+		//ejecuto la sentencia
+		try{
+			ResultSet resultado = pstmt.executeQuery();
+
+			int contador = 0;
+			while(resultado.next()){
+				contador++;
+
+				int numDonante = resultado.getInt(1);
+				String nombre = resultado.getString(2);
+				String apellido1 = resultado.getString(3);
+				String apellido2 = resultado.getString(4);
+				String dNI_NIE = resultado.getString(5);
+				String fechaNac = resultado.getString(6);
+				int tlf = resultado.getInt(7);
+				int tLFMovil = resultado.getInt(8);
+				String email = resultado.getString(9);
+				String sexo = resultado.getString(10);
+				String tipoSang = resultado.getString(11);
+				String direccion = resultado.getString(12);
+				String residencia = resultado.getString(13);
+				String provincia = resultado.getString(14);
+				String poblacion = resultado.getString(15);
+				int cP = resultado.getInt(16);
+				String pais = resultado.getString(17);
+				
+			
+
+				Donantes nueva = new Donantes(numDonante,  nombre,  apellido1,  apellido2,  dNI_NIE,  fechaNac,
+						 tlf,  tLFMovil, email,  sexo,  tipoSang,  direccion,  residencia,
+						 provincia,  poblacion,  cP,  pais, null);
+				listaDonantes.add(nueva);
+			}
+
+			if(contador==0)
+				System.out.println("no data found");
+
+		}catch(SQLException sqle){
+
+			int pos = sqle.getMessage().indexOf(":");
+			String codeErrorSQL = sqle.getMessage().substring(0,pos);
+
+			System.out.println(codeErrorSQL);
+		}
+
+		return listaDonantes;
+	}
 	}
 

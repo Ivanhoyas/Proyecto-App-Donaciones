@@ -5,7 +5,7 @@ import java.sql.Date;
 
 public class Donantes {
 
-	private String NumDonante;
+	private int NumDonante;
 	private String Nombre;
 	private String Apellido1;
 	private String Apellido2;
@@ -24,7 +24,7 @@ public class Donantes {
 	private String Pais;
 	private String Aptitud;
 	private Blob Foto;
-	public Donantes(String numDonante, String nombre, String apellido1, String apellido2, String dNI_NIE, String fechaNac,
+	public Donantes(int numDonante, String nombre, String apellido1, String apellido2, String dNI_NIE, String fechaNac,
 			int tlf, int tLFMovil, String email, String sexo, String tipoSang, String direccion, String residencia,
 			String provincia, String poblacion, int cP, String pais, Blob foto) {
 		super();
@@ -47,10 +47,10 @@ public class Donantes {
 		Pais = pais;
 		Foto = foto;
 	}
-	public String getNumDonante() {
+	public int getNumDonante() {
 		return NumDonante;
 	}
-	public void setNumDonante(String numDonante) {
+	public void setNumDonante(int numDonante) {
 		NumDonante = numDonante;
 	}
 	public String getNombre() {
