@@ -76,8 +76,8 @@
                   <TableColumn fx:id="Tipo_sanguineo" prefWidth="75.0" text="Tipo_Sang" />
                   <TableColumn fx:id="Direccion" prefWidth="75.0" text="Dirección" />
                   <TableColumn fx:id="T_residencia" prefWidth="75.0" text="Tipo_Res" />
-                  <TableColumn fx:id="Poblacion" prefWidth="75.0" text="Población" />
-                  <TableColumn fx:id="Provincia" prefWidth="75.0" text="Provincia" />
+                  <TableColumn fx:id="Poblacion" prefWidth="75.0" text="Provincia" />
+                  <TableColumn fx:id="Provincia" prefWidth="75.0" text="Población" />
                   <TableColumn fx:id="CP" prefWidth="75.0" text="CP" />
                   <TableColumn fx:id="Pais_nacimiento" prefWidth="75.0" text="País Natal" />
               </columns>

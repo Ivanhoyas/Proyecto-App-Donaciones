@@ -131,11 +131,11 @@ public class Donantes {
 	public void setProvincia(String provincia) {
 		Provincia = provincia;
 	}
-	public String getPobacion() {
+	public String getPoblacion() {
 		return Poblacion;
 	}
-	public void setPobacion(String pobacion) {
-		Poblacion = pobacion;
+	public void setPoblacion(String poblacion) {
+		Poblacion = poblacion;
 	}
 	public int getCP() {
 		return CP;
